@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">💰 Finance Tracker</h1>
+        <button class="dark-mode" id="modeToggle">Dark Mode</button>
+    </header>
+    <section class="dashboard">
+        <div class="card balanced-card">
+            <h3>Total Balance</h3>
+            <p class="totalBalance">$0</p>
+        </div>
+        <div class="card income-card">
+            <h3>Total Income</h3>
+            <p class="totalIncome">$0</p>
+        </div>
+        <div class="card expense">
+            <h3>Total Expense</h3>
+            <p class="totalExpense">$0</p>
+        </div>
+    </section>
+    <section class="main-container">
+        <div class="form-section">
+            <h2>Add Transaction</h2>
+            <form  id="transactionForm">
+                <input type="text" id="title" placeholder="Transaction Title" required/>
+                <input type="number" id="amount" placeholder="Amount" required />
+                <select  id="type" required>
+                    <option value="">Select Type</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <select  id="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Food">Food</option>
+                    <option value="travel">Travel</option>
+                    <option value="bills">Bills</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="salary">Salary</option>
+                </select>
+                <input type="date" id="date" required />
+                <button type="submit" class="add-btn">Add Transaction</button>
+            </form>
+        </div>
+        <div class="list-section">
+            <div class="list-header">
+                <h2>Transactions</h2>
+                <div class="filter">
+                    <select  id="filterType">
+                        <option value="all">All</option>
+                        <option value="income">Income</option>
+                        <option value="expense">Expense</option>
+                    </select>
+                    <input type="text" id="search" placeholder="search..." />
+                </div>
+            </div>
+            <ul id="transactionList" class="transaction-list">
+                <p id="emptyMsg">No transactions yet. Add one!</p>
+            </ul>
+        </div>
+    </section>
+    <section class="chart">
+        <h2>Financial Overview</h2>
+        <canvas id="financeChart"></canvas>
+    </section>
+    <footer class="footer">
+        <button id="exportBtn">Export Data</button>
+       <p>
+  © 2026 | Developed by Muhammad Huzaifa Khan | 
+  <a href="https://github.com/huzaifa1329" target="_blank">GitHub</a>
+</p>
+
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
